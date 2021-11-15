@@ -17,7 +17,7 @@ pipeline{
 	    agent any
             steps{
                 sh """
-		    docker-compose up --name $IMAGE_NAME:$IMAGE_TAG
+		    docker-compose up 
 		    sleep 5
                 """
             }
