@@ -17,7 +17,8 @@ pipeline{
 	    agent any
             steps{
                 sh """
-		    docker-compose up 
+		    ls
+                    docker-compose up 
 		    sleep 5
                 """
             }
