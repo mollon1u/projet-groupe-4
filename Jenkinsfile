@@ -9,7 +9,7 @@ pipeline{
 	    agent any
             steps {
                 sh """
-                    docker build -t $IMAGE_NAME:$IMAGE_TAG  .
+                    docker build --name $IMAGE_NAME:$IMAGE_TAG  .
                 """
             }
         }
@@ -17,7 +17,7 @@ pipeline{
 	    agent any
             steps{
                 sh """
-		    docker-compose up
+		    docker-compose up --name $IMAGE_NAME:$IMAGE_TAG
 		    sleep 5
                 """
             }
