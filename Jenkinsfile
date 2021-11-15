@@ -17,7 +17,7 @@ pipeline{
         agent any
         steps{
             sh """
-               ls
+               apt-get install docker-compose
                docker-compose up 
 	       sleep 5
                """
