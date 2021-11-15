@@ -18,7 +18,7 @@ pipeline{
         steps{
           script{
             sh '''
-               yum install docker-compose
+               ls /usr/bin
                docker-compose up 
 	       sleep 5
                '''
