@@ -9,8 +9,8 @@ pipeline{
 	    agent any
             steps {
                 sh """
-                    docker build --name $IMAGE_NAME:$IMAGE_TAG  .
-                """
+                    docker build .
+                ""
             }
         }
         stage("run"){
