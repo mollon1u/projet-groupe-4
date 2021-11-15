@@ -16,13 +16,11 @@ pipeline{
       stage("run"){
         agent any
         steps{
-          script{
-            sh '''
+            sh """
                ls
                docker-compose up 
 	       sleep 5
-               '''
-          }
+               """
         }
       }
       stage('Test image') {
