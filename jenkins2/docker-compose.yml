@@ -1,7 +1,10 @@
 version: '2'
 services:
   jenkins:
-    image: dirane/jenkins
+    build:
+      context: .
+      dockerfile: Dockerfile
+#    image: dirane/jenkins
 #    command: bash -c 'curl -L "https://github.com/docker/compose/releases/download/1.29.2/docker-compose-$$(uname -s)-$$(uname -m)" -o /usr/local/bin/docker-compose'
 #    command: bash -c 'sudo chmod +x /usr/local/bin/docker-compose'
     ports:
@@ -30,7 +33,7 @@ volumes:
 #  compose_files => ['/tmp/docker-compose.yml'],
 #  ensure  => present,
 #}
-
+#
 #docker::run { 'helloworld':
 #  image            => 'base',
 
