@@ -32,7 +32,7 @@ pipeline{
         steps {
           script {
             sh '''
-                curl http://127.0.0.1:8080/ | grep -q It
+                curl http://127.0.0.1:8000/ | grep -q It
                '''
           }
         }
