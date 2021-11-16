@@ -20,7 +20,8 @@ pipeline{
             sh '''
                ls /usr/bin
 #               yum install docker-compose-1.18.0-4.el7.noarch
-               docker-compose up 
+               docker build .
+               docker-compose up -d
 	       sleep 5
                '''
           }
