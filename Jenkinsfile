@@ -10,7 +10,7 @@ pipeline{
         steps {
           sh """
 #             docker build .
-              ssh -o StrictHostKeyChecking=no vagrant@jendev -C \'docker build .'
+              ssh -o StrictHostKeyChecking=no vagrant@192.168.99.10 -C \'docker build .'
              """
         }
       }
