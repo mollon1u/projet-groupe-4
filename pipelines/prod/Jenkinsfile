@@ -16,7 +16,7 @@ pipeline{
         steps {
           sh """
 #             docker build .
-              ssh vagrant@$HOST -C \'sudo docker build /root/projet/projet-groupe-4/'
+              ssh vagrant@$HOST -C \'sudo docker build /root/project/projet-groupe-4/'
              """
         }
       }
