@@ -1,6 +1,6 @@
 def CONTAINER_NAME = "projectapp"
 def ENV_NAME = getEnvName(env.BRANCH_NAME)
-#def CONTAINER_TAG = getTag(env.BUILD_NUMBER, env.BRANCH_NAME)
+
 
 pipeline{
     environment {
