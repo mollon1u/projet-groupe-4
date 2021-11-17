@@ -5,18 +5,6 @@ pipeline{
      }
     agent none
     stages {
-        stage('prepare context') {
-            agent any
-            steps {
-               script {
-                 sh '''
-                   docker stop $IMAGE_NAME
-                   docker rm $IMAGE_NAME
-		   docker rmi $IMAGE_NAME
-                 '''
-                }
-            }
-        }
         stage("build"){
 	    agent any
             steps {
