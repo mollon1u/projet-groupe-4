@@ -5,7 +5,7 @@
 pipeline{
     
     environment {
-       IMAGE_NAME = "Django"
+       IMAGE_NAME = "django"
        IMAGE_TAG = "latest"
     }
     agent none
@@ -15,7 +15,7 @@ pipeline{
         steps {
           sh """
 #             docker build .
-              ssh vagrant@192.168.99.11 -C \'sudo docker build /root/projet/projet-groupe-4/'
+              ssh vagrant@192.168.99.11 -C \'sudo docker build /root/projet/projet-groupe-4/ -t $IMAGE_NAME:$IMAGE_TAG'
              """
         }
       }
