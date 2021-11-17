@@ -10,7 +10,7 @@ pipeline{
         steps {
           sh """
 #             docker build .
-              ssh vagrant@192.168.99.11 -C \'docker build /home/vagrant/projet-groupe-4/'
+              ssh vagrant@192.168.99.11 -C \'sudo su - && docker build /root/projet/projet-groupe-4/'
              """
         }
       }
