@@ -3,6 +3,7 @@ def ENV_NAME = env.BRANCH_NAME
 
 
 pipeline{
+    
     environment {
        IMAGE_NAME = "Django"
        IMAGE_TAG = "latest"
