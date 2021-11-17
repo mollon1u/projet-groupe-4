@@ -1,0 +1,39 @@
+version: '2'
+services:
+  jenkins:
+    build:
+      context: .
+      dockerfile: Dockerfile
+#    image: dirane/jenkins
+#    command: bash -c 'curl -L "https://github.com/docker/compose/releases/download/1.29.2/docker-compose-$$(uname -s)-$$(uname -m)" -o /usr/local/bin/docker-compose'
+#    command: bash -c 'sudo chmod +x /usr/local/bin/docker-compose'
+    ports:
+      - '8080:8080'
+      - '5001:5001'
+    privileged: true
+    volumes:
+      - 'jenkins_home2:/var/jenkins_home'
+      - '/var/run/docker.sock:/var/run/docker.sock'
+
+#    command: bash -c "mkdir /usr/local/bin"
+#    command: bash -c "touch /usr/local/bin/docker-compose"
+#    command: bash -c "yum install curl -y"
+
+volumes:
+  jenkins_home2:
+    driver: local
+
+#include docker
+#class {'docker::compose':
+#  ensure => present,
+#  version => latest,
+#}
+
+#docker_compose { 'test':
+#  compose_files => ['/tmp/docker-compose.yml'],
+#  ensure  => present,
+#}
+#
+#docker::run { 'helloworld':
+#  image            => 'base',
+
