@@ -1,3 +1,7 @@
+def CONTAINER_NAME = "projectapp"
+def ENV_NAME = getEnvName(env.BRANCH_NAME)
+def CONTAINER_TAG = getTag(env.BUILD_NUMBER, env.BRANCH_NAME)
+
 pipeline{
     environment {
        IMAGE_NAME = "Django"
@@ -10,7 +14,7 @@ pipeline{
         steps {
           sh """
 #             docker build .
-              ssh vagrant@192.168.99.11 -C \'sudo docker build /root/projet/projet-groupe-4/'
+              ssh vagrant@192.168.99.11 -C \'sudo docker build -t $CONTAINER_NAME:$CONTAINER_TAG  -t $CONTAINER_NAME /root/projet/projet-groupe-4/'
              """
         }
       }
@@ -22,7 +26,7 @@ pipeline{
                ls /usr/bin
 #               yum install docker-compose-1.18.0-4.el7.noarch
                docker build .
-               docker-compose up -d
+               ssh vagrant@192.168.99.11 -C \'sudo docker-compose -f /projetb/projet-groupe-4/docker-compose.yml up --name $containerName -d'
 	       sleep 5
                '''
           }
