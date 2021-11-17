@@ -38,7 +38,7 @@ pipeline{
         steps {
           script {
             sh '''
-                curl -L http//192.168.99.11:8000 | grep -q It
+                curl -L "http//192.168.99.11:8000" | grep -q It
                '''
           }
         }
