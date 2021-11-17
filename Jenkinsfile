@@ -1,5 +1,5 @@
-def CONTAINER_NAME = "projectapp"
-def ENV_NAME = env.BRANCH_NAME
+
+
 
 
 pipeline{
@@ -15,7 +15,7 @@ pipeline{
         steps {
           sh """
 #             docker build .
-              ssh vagrant@192.168.99.11 -C \'sudo docker build -t $CONTAINER_NAME:$CONTAINER_TAG  -t $CONTAINER_NAME /root/projet/projet-groupe-4/'
+              ssh vagrant@192.168.99.11 -C \'sudo docker build /root/projet/projet-groupe-4/'
              """
         }
       }
