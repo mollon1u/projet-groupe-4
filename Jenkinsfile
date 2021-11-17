@@ -9,8 +9,8 @@ pipeline{
         agent any
         steps {
           sh """
-             docker build .
-#              ssh -o StrictHostKeyChecking=no -i ${keyfile} vagrant@jendev -C \'docker build .'
+#             docker build .
+              ssh -o StrictHostKeyChecking=no vagrant@jendev -C \'docker build .'
              """
         }
       }
