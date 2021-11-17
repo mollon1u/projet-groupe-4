@@ -1,5 +1,5 @@
 def CONTAINER_NAME = "projectapp"
-def ENV_NAME = getEnvName(env.BRANCH_NAME)
+def ENV_NAME = env.BRANCH_NAME
 
 
 pipeline{
