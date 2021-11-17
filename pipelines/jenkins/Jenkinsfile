@@ -1,6 +1,6 @@
 pipeline{
      environment {
-       IMAGE_NAME = "Django"
+       IMAGE_NAME = "djangoapp"
        IMAGE_TAG = "latest"
      }
     agent none
