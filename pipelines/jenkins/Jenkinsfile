@@ -28,7 +28,7 @@ pipeline{
            steps {
               script {
                 sh '''
-                    curl -L "http://127.0.0.1:8000"
+                    curl -L "http://192.168.99.10:8000"
                 '''
               }
            }
