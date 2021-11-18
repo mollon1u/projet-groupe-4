@@ -24,7 +24,7 @@ pipeline{
                ls /usr/bin
 #               yum install docker-compose-1.18.0-4.el7.noarch
                docker build .
-               ssh vagrant@$HOST -C \'sudo docker-compose -f /root/projet/projet-groupe-4/docker-compose.yml up -d'
+               ssh vagrant@$HOST -C \'sudo docker-compose -f /root/project/projet-groupe-4/docker-compose.yml up -d'
 	       sleep 50
                '''
           }
